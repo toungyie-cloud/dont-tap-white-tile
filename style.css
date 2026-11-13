@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: radial-gradient(circle at 50% 20%, #2b2b45 0%, #171722 70%);
+  color: #e8e8f0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+}
+
+.game-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+}
+
+.hud {
+  display: flex;
+  gap: 28px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.hud-item span {
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffd34d;
+}
+
+.level-bar {
+  width: min(92vw, 360px);
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.level-bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffd34d, #ff9f43);
+  transition: width 0.2s ease;
+}
+
+.board {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+canvas {
+  display: block;
+  width: min(92vw, 360px);
+  height: auto;
+  background: #ececec;
+  touch-action: manipulation;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 30, 0.62);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.25s ease;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.panel {
+  text-align: center;
+  padding: 28px 26px;
+}
+
+.panel h1 {
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.panel p {
+  font-size: 14px;
+  color: #c8c8d8;
+  margin-bottom: 22px;
+}
+
+.panel button {
+  font-size: 17px;
+  padding: 12px 34px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffd34d, #ff9f43);
+  color: #3a2a00;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(255, 159, 67, 0.4);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.panel button:hover {
+  transform: translateY(-2px);
+}
+
+.panel button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(255, 159, 67, 0.35);
+}
+
+.tips {
+  font-size: 12px;
+  color: #8b8ba3;
+  letter-spacing: 1px;
+}

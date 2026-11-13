@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>别踩白块</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-wrap">
+    <header class="hud">
+      <div class="hud-item">得分 <span id="score">0</span></div>
+      <div class="hud-item">等级 <span id="level">1</span></div>
+      <div class="hud-item">最佳 <span id="best">0</span></div>
+    </header>
+
+    <div class="level-bar" title="升级进度">
+      <div class="level-bar-fill" id="levelProgress"></div>
+    </div>
+
+    <div class="board">
+      <canvas id="game" width="360" height="560"></canvas>
+
+      <div class="overlay" id="overlay">
+        <div class="panel">
+          <h1 id="title">别踩白块</h1>
+          <p id="subtitle">点按黑色方块，别碰到白色的</p>
+          <button id="startBtn">开始游戏</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="tips">
+      <span>键盘 1 / 2 / 3 / 4 或点击方块</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
